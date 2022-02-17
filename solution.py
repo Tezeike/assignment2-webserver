@@ -20,7 +20,6 @@ def webServer(port=13331):
 
       try:
         message = connectionSocket.recv(1024).decode()#Fill in start    #Fill in end
-        print message
         filename = message.split()[1]
         f = open(filename[1:])
         outputdata = f.read()#Fill in start     #Fill in end
@@ -28,7 +27,7 @@ def webServer(port=13331):
         #Send one HTTP header line into socket.
         #Fill in start
         connectionSocket.send('\nHTTP/1.x 200 OK\n'.encode())
-        break#Write header
+        #Write header
 
         #Fill in end
 
