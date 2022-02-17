@@ -7,7 +7,7 @@ import sys
 def webServer(port=13331):
   serverSocket = socket(AF_INET, SOCK_STREAM)
   #Prepare a server socket
-  serverSocket.bind(("", port))
+  serverSocket.bind(("127.0.0.1", port))
   #Fill in start
   serverSocket.listen(1) #listen on port
   #Fill in end
@@ -27,7 +27,8 @@ def webServer(port=13331):
         
         #Send one HTTP header line into socket.
         #Fill in start
-        connectionSocket.send('\nHTTP/1.x 200 OK\n') #Write header
+        connectionSocket.send('\nHTTP/1.x 200 OK\n')
+        break#Write header
 
         #Fill in end
 
